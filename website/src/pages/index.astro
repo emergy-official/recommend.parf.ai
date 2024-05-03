@@ -1,0 +1,31 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import HeroCustom from '~/components/widgets/HeroCustom.astro';
+import Features2Custom from '~/components/widgets/Features2Custom.astro';
+import { getPermalink } from '~/utils/permalinks';
+import Icon from 'node_modules/astro-icon/components/Icon.astro';
+
+const metadata = {
+  title: 'Recommend.parf.ai — Demo project to detect anomalies in cookies',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <HeroCustom>
+    <Fragment slot="title">
+      <span class="text-[#2a9d8f] highlight">Recommend</span> lorem ipsum <span class="ml-1 inline-block"
+        ><Icon name="tabler:cookie" /></span
+      >
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="sm:inline">
+        Subtext</span
+      >
+    </Fragment>
+  </HeroCustom>
+</Layout>
