@@ -1,15 +1,14 @@
 // index.ts  
-import { pingInference, returnData, selectImage } from './helper';
+import { pingInference, returnData, inference } from './helper';
 
 // Incoming lambda request
 export async function handler(event: any, _: any) {
-  console.log("INPUT", event);
 
   // POST method to submit the feedback
   if (event.httpMethod == "POST") {
     const params = JSON.parse(event.body);
-    if (params.base64) {
-      return selectImage(params.base64)
+    if (params.userId) {
+      return inference(params.userId)
     }
   } else if (event.httpMethod == "GET") {
     // Ping the inference

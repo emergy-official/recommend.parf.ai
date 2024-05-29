@@ -35,11 +35,11 @@ resource "aws_sagemaker_endpoint_configuration" "api" {
   name = "${var.prefix}-config"
 
   production_variants {
-    variant_name = "${var.prefix}-api-1gb"
+    variant_name = "${var.prefix}-api-4096gb"
     model_name   = aws_sagemaker_model.api.name
     serverless_config {
       max_concurrency   = 3
-      memory_size_in_mb = 1024
+      memory_size_in_mb = 4096
     }
   }
 }

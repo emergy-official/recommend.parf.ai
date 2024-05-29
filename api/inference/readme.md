@@ -57,4 +57,5 @@ docker tag recommend-inference-api:$IMG_VERSION "$ACCOUNT_ID".dkr.ecr.us-east-1.
 
 # Push the image
 docker push "$ACCOUNT_ID".dkr.ecr.us-east-1.amazonaws.com/recommend-inference-api:$IMG_VERSION
+# docker run --platform linux/amd64 -p 8887:8080 recommend-inference-api:latest             
 ```

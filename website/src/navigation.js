@@ -2,18 +2,18 @@ import { getPermalink } from './utils/permalinks';
 
 export const headerData = {
   links: [
-    {
-      text: 'Real-time',
-      href: getPermalink('/real-time-inference'),
-    },
-    {
-      text: 'Dataset',
-      href: getPermalink('/dataset'),
-    },
-    {
-      text: 'Serverless',
-      href: getPermalink('/serverless-inference'),
-    },
+    // {
+    //   text: 'Real-time',
+    //   href: getPermalink('/real-time-inference'),
+    // },
+    // {
+    //   text: 'Dataset',
+    //   href: getPermalink('/dataset'),
+    // },
+    // {
+    //   text: 'Serverless',
+    //   href: getPermalink('/serverless-inference'),
+    // },
   ],
   actions: [
     { text: 'Github', href: 'https://github.com/emergy-official/recommend.parf.ai', icon: 'tabler:brand-github', target: '_blank' },

@@ -28,21 +28,22 @@ export const returnData = (data: any) => {
 export const pingInference = async () => {
     try {
 
-        const data = JSON.stringify({ ping: "pong" });
+        // const data = JSON.stringify({ ping: "pong" });
+        return returnData({ success: true })
 
-        const command = new InvokeEndpointCommand({
-            EndpointName: process.env.INFERANCE_NAME,
-            ContentType: "application/json",
-            Body: data,
-        });
+        // const command = new InvokeEndpointCommand({
+        //     EndpointName: process.env.INFERANCE_NAME,
+        //     ContentType: "application/json",
+        //     Body: data,
+        // });
 
-        const response = await runtimeClient.send(command);
+        // const response = await runtimeClient.send(command);
 
-        // Assuming the response is a Buffer, convert it to JSON
-        // This part may vary depending on the response format from your SageMaker endpoint  
-        if (response.Body) {
-            console.log(response.Body);
-        }
+        // // Assuming the response is a Buffer, convert it to JSON
+        // // This part may vary depending on the response format from your SageMaker endpoint  
+        // if (response.Body) {
+        //     console.log(response.Body);
+        // }
     } catch (error: any) {
         if (error.message.includes("No image provided")) {
             console.log("Ping ok")
@@ -53,30 +54,28 @@ export const pingInference = async () => {
         }
     }
 };
-export const selectImage = async (encodedString: string) => {
+
+function getRandomBetween(min: number, max: number) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+
+export const inference = async (userId: number) => {
     try {
-        const data = JSON.stringify({ image: encodedString });
+        const data = JSON.stringify({ userId: 15587 });
+        console.log("Data", data)
 
         const command = new InvokeEndpointCommand({
             EndpointName: process.env.INFERANCE_NAME,
             ContentType: "application/json",
             Body: data,
         });
-
         const response = await runtimeClient.send(command);
-
-        // Assuming the response is a Buffer, convert it to JSON  
-        // This part may vary depending on the response format from your SageMaker endpoint  
-        if (response.Body) {
-            let resultString = "";
-            if (response.Body instanceof Buffer) {
-                resultString = response.Body.toString("utf-8");
-            } else if (response.Body instanceof Uint8Array || typeof response.Body === "string") {
-                resultString = Buffer.from(response.Body).toString("utf-8");
-            }
-            const result = JSON.parse(resultString);
-            return returnData(result)
-        }
+        const responseString = new TextDecoder("utf-8").decode(response.Body);
+        const respData = JSON.parse(responseString);
+       
+        return returnData(respData)
+    
     } catch (error) {
         console.error(error);
     }
