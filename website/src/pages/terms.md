@@ -3,7 +3,7 @@ title: 'Terms and Conditions'
 layout: '~/layouts/MarkdownLayout.astro'
 ---
 
-_Last updated_: April 23, 2024
+_Last updated_: May 30, 2024
 
 Please read these terms and conditions carefully before using Our Service.
 
