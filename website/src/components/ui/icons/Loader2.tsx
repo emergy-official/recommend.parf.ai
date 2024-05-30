@@ -10,7 +10,7 @@ export function Loader2(props) {
     >
       <path
         fill="none"
-        stroke="black"
+        stroke="white"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="2.35"

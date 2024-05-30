@@ -5,17 +5,18 @@ const getAPIURL = () => {
     return document.location.host.includes("localhost") ? SITE.devAPIURL : "/api"
 }
 
-export const sendSelectRequest = async (img_64: string, setError, timeout: number = 180000) => {
+export const sendRequest = async (userId: number, setError, setIsLoading, timeout: number = 180000) => {
     try {
         const res: any = await axios({
             method: "post",
             url: `${getAPIURL()}/recommend`,
-            data: { base64: img_64 },
+            data: { userId },
             timeout
         })
         return res?.data
     } catch (e) {
         setError(e.message)
+        setIsLoading(false)
         return null
     }
 }
