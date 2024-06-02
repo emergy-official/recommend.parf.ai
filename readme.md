@@ -1,6 +1,6 @@
 # Recommend.parf.ai
 
-![](website/src/assets/images/default.png)
+![](website/src/assets/images/readme.png)
 
 ## INTRODUCTION
 

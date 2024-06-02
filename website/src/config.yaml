@@ -22,7 +22,7 @@ metadata:
   openGraph:
     site_name: Recommend.parf.ai
     images:
-      - url: '~/assets/images/default.png'
+      - url: '~/assets/images/readme.png'
         width: 1200
         height: 628
     type: website
