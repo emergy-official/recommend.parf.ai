@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This API allows a user to get the recommend an image using EfficientAD model.  
+This API allows a user to get the recommendation of a user id.
 The role of the API is to send a request to the sagemaker endpoint without exposing sagemaker directly.
 
 ### Endpoints:

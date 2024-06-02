@@ -4,19 +4,10 @@
 
 ## INTRODUCTION
 
-This project is a full demo featuring Recommend Detection models on cookies from developing the notebooks to the web app deployment.
+This project is a demo featuring a news recommendation models
 
 - **PROD**: https://recommend.parf.ai/
 - **DEV**: https://dev.recommend.parf.ai/
-
-**MAIN FEATURES**
-
-- Three models (Baseline, EfficientAD, FOMO AD)
-- A web app
-    - Efficient AD model using Sagemaker serverless endpoint
-    - FOMO AD model using your browser as real-time inference from Edge Impulse
-- An API for the serverless inference endpoint
-- Automatic deployment with AWS using Terraform
 
 ## FOLDER STRUCTURE
 

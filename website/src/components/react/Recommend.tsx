@@ -34,7 +34,7 @@ export default function Recommend({ ...props }) {
       <div className="flex flex-row pb-5">
         <input
           type="number"
-          min={0}
+          min={1}
           max={322896}
           value={value}
           onChange={handleChange}

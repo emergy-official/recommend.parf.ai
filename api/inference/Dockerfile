@@ -18,11 +18,11 @@ COPY app.py .
 COPY helper.py .  
 
 RUN mkdir model_data
-COPY model_data/article_embeddings_df-reduced.pkl ./model_data/
-COPY model_data/content-based-reduced.h5 ./model_data/
-COPY model_data/df_articles-reduced.pkl ./model_data/
+COPY model_data/articles_embed_df.pkl ./model_data/
+COPY model_data/content_based_model.h5 ./model_data/
+COPY model_data/df_articles.pkl ./model_data/
 COPY model_data/embeddings_dict.pkl ./model_data/
-COPY model_data/user_profiles_df_all-reduced.pkl ./model_data/
+COPY model_data/user_profiles_df_all.pkl ./model_data/
 
 # Set the entrypoint for the container  
 ENTRYPOINT ["gunicorn", "-b", "0.0.0.0:8080",  "--log-level", "debug", "app:app"]  

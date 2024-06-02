@@ -54,15 +54,15 @@ def g_auc(y_true, y_pred):
             return 0.0
     return tf.py_function(compute_auc, (y_true, y_pred), tf.double)
 
-model = load_model('./model_data/content-based-reduced.h5', custom_objects={'ndcg_5': ndcg_5, 'ndcg_10': ndcg_10, 'mean_mrr': mean_mrr, 'g_auc': g_auc})
+model = load_model('./model_data/content_based_model.h5', custom_objects={'ndcg_5': ndcg_5, 'ndcg_10': ndcg_10, 'mean_mrr': mean_mrr, 'g_auc': g_auc})
 
 with open('./model_data/embeddings_dict.pkl', 'rb') as f:
    embeddings_dict = pickle.load(f)
    
 # Load DataFrames from disk
 user_profiles_df_all = pd.read_pickle("./model_data/user_profiles_df_all-reduced.pkl")
-df_articles = pd.read_pickle("./model_data/df_articles-reduced.pkl")
-article_embeddings_df = pd.read_pickle("./model_data/article_embeddings_df-reduced.pkl")
+df_articles = pd.read_pickle("./model_data/df_articles.pkl")
+article_embeddings_df = pd.read_pickle("./model_data/articles_embed_df.pkl")
 
 def infer_all_articles_scores(user_id, df, df_articles, article_embeddings_df, model):
     

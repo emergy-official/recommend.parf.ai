@@ -22,9 +22,7 @@ let options = {
   headers: {
     "Content-Type": "application/json",
   },
-  body: JSON.stringify({
-    base64: "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=",
-  }),
+  body: JSON.stringify({"userId":15587}),
 };
 request(options, (error, response) => {
   if (error) throw new Error(error);
@@ -36,11 +34,57 @@ Response example
 
 ```json
 {
-  "predictions": {
-    "classification": "recommend",
-    "heatmap_image": "...",
-    "score": 1.18
-  }
+    "predictions": {
+        "clicked_articles": [
+            {
+                "article_id": 336221,
+                "category_id": 437,
+                "score": 0.9999988675117493
+            },
+            {
+                "article_id": 234698,
+                "category_id": 375,
+                "score": 0.9998106956481934
+            },
+            {
+                "article_id": 161586,
+                "category_id": 281,
+                "score": 0.9921646118164062
+            },
+            {
+                "article_id": 233605,
+                "category_id": 375,
+                "score": 0.9868424534797668
+            }
+        ],
+        "top_recommendation": [
+            {
+                "article_id": 236338,
+                "category_id": 375,
+                "score": 0.9998152852058411
+            },
+            {
+                "article_id": 336223,
+                "category_id": 437,
+                "score": 0.9998084902763367
+            },
+            {
+                "article_id": 236552,
+                "category_id": 375,
+                "score": 0.9996036887168884
+            },
+            {
+                "article_id": 160974,
+                "category_id": 281,
+                "score": 0.9995703101158142
+            },
+            {
+                "article_id": 160132,
+                "category_id": 281,
+                "score": 0.999555766582489
+            }
+        ]
+    }
 }
 ```
 
